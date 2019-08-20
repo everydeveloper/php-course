@@ -1,0 +1,121 @@
+title: PHP Intro
+tagline: Learn the basics of PHP
+description: PHP is a server-side programming language that can insert dynamic code into your HTML. PHP is used in popular content management systems, such as WordPress and Drupal. 
+tags:
+  - PHP
+
+template:
+  name: php-intro
+  repo: php-template
+  description: An introduction to PHP with HTML
+before:
+  - type: createIssue
+    title: Installation
+    body: 01-install.md
+
+steps:
+  - title: Installation
+    description: Install server and text editor
+    event: issues.closed
+    link: "{{ repoUrl }}/issues/1"
+    actions:
+      - type: respond
+        with: 01-complete.md
+        issue: 1
+      - type: createIssue
+        title: Setting up PHP
+        body: 02-php-setup.md
+
+  - title: Setting up PHP
+    description: Set up PHP code in HTML
+    event: push
+    link: "{{ repoUrl }}/issues/2"
+    actions:
+      - type: createIssue
+        title: Creating PHP Variables
+        body: 03-variables.md
+      - type: closeIssue
+        issue: 2
+      - type: respond
+        with: 02-complete.md
+        issue: 2
+
+  - title: Creating PHP Variables
+    description: Create PHP Variables inside HTML
+    event: push
+    link: "{{ repoUrl }}/issues/3"
+    actions:
+      - type: createIssue
+        title: Building Array Variables
+        body: 04-arrays.md
+      - type: closeIssue
+        issue: 3
+      - type: respond
+        with: 03-complete.md
+        issue: 3
+
+  - title: Building Array Variables
+    description: Store variables in array grouping
+    event: push
+    link: "{{ repoUrl }}/issues/4"
+    actions:
+      - type: createIssue
+        title: Building Loops
+        body: 05-loops.md
+      - type: closeIssue
+        issue: 4
+      - type: respond
+        with: 04-complete.md
+        issue: 4
+
+  - title: Building Loops
+  description: Build a sequence of instructions repeated until a condition is met
+  event: push
+  link: "{{ repoUrl }}/issues/5"
+  actions:
+    - type: createIssue
+      title: Conditional Statements
+      body: 06-conditionals.md
+    - type: closeIssue
+      issue: 5
+    - type: respond
+      with: 05-complete.md
+      issue: 5
+
+  - title: Conditional Statements
+  description: Store variables in array grouping
+  event: push
+  link: "{{ repoUrl }}/issues/6"
+  actions:
+    - type: createIssue
+      title: Functions
+      body: 07-functions.md
+    - type: closeIssue
+      issue: 6
+    - type: respond
+      with: 06-complete.md
+      issue: 6
+
+  - title: Functions
+  description: Store variables in array grouping
+  event: push
+  link: "{{ repoUrl }}/issues/7"
+  actions:
+    - type: createIssue
+      title: Conclusion
+      body: 08-conclusion.md
+    - type: closeIssue
+      issue: 7
+    - type: respond
+      with: 07-complete.md
+      issue: 7
+
+  - title: Conclusion
+  description: Store variables in array grouping
+  event: issues.closed
+  link: "{{ repoUrl }}/issues/8"
+  actions:
+    - type: respond
+      with: 08-complete.md
+      issue: 8
+
