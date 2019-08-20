@@ -68,54 +68,55 @@ steps:
         with: 04-complete.md
         issue: 4
 
-- title: Building Loops
-  description: Build a sequence of instructions repeated until a condition is met
-  event: push
-  link: "{{ repoUrl }}/issues/5"
-  actions:
-    - type: createIssue
-      title: Conditional Statements
-      body: 06-conditionals.md
-    - type: closeIssue
-      issue: 5
-    - type: respond
-      with: 05-complete.md
-      issue: 5
+  - title: Building Loops
+    description: Build a sequence of instructions repeated until a condition is met
+    event: push
+    link: "{{ repoUrl }}/issues/5"
+    actions:
+      - type: createIssue
+        title: Conditional Statements
+        body: 06-conditionals.md
+      - type: closeIssue
+        issue: 5
+      - type: respond
+        with: 05-complete.md
+        issue: 5
 
-- title: Conditional Statements
-  description: Store variables in array grouping
-  event: push
-  link: "{{ repoUrl }}/issues/6"
-  actions:
-    - type: createIssue
-      title: Functions
-      body: 07-functions.md
-    - type: closeIssue
-      issue: 6
-    - type: respond
-      with: 06-complete.md
-      issue: 6
+  - title: Conditional Statements
+    description: Store variables in array grouping
+    event: push
+    link: "{{ repoUrl }}/issues/6"
+    actions:
+      - type: createIssue
+        title: Functions
+        body: 07-functions.md
+      - type: closeIssue
+        issue: 6
+      - type: respond
+        with: 06-complete.md
+        issue: 6
 
-- title: Functions
-  description: Store variables in array grouping
-  event: push
-  link: "{{ repoUrl }}/issues/7"
-  actions:
-    - type: createIssue
-      title: Conclusion
-      body: 08-conclusion.md
-    - type: closeIssue
-      issue: 7
-    - type: respond
-      with: 07-complete.md
-      issue: 7
+  - title: Functions
+    description: Store variables in array grouping
+    event: push
+    link: "{{ repoUrl }}/issues/7"
+    actions:
+      - type: createIssue
+        title: Conclusion
+        body: 08-conclusion.md
+      - type: closeIssue
+        issue: 7
+      - type: respond
+        with: 07-complete.md
+        issue: 7
 
-- title: Conclusion
-  description: Store variables in array grouping
-  event: issues.closed
-  link: "{{ repoUrl }}/issues/8"
-  actions:
-    - type: respond
-      with: 08-complete.md
-      issue: 8
+  - title: Conclusion
+    description: Store variables in array grouping
+    event: issues.closed
+    link: "{{ repoUrl }}/issues/8"
+    actions:
+      - type: respond
+        with: 08-complete.md
+        issue: 8
+
 
