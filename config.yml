@@ -68,7 +68,7 @@ steps:
         with: 04-complete.md
         issue: 4
 
-  - title: Building Loops
+- title: Building Loops
   description: Build a sequence of instructions repeated until a condition is met
   event: push
   link: "{{ repoUrl }}/issues/5"
@@ -82,7 +82,7 @@ steps:
       with: 05-complete.md
       issue: 5
 
-  - title: Conditional Statements
+- title: Conditional Statements
   description: Store variables in array grouping
   event: push
   link: "{{ repoUrl }}/issues/6"
@@ -96,7 +96,7 @@ steps:
       with: 06-complete.md
       issue: 6
 
-  - title: Functions
+- title: Functions
   description: Store variables in array grouping
   event: push
   link: "{{ repoUrl }}/issues/7"
@@ -110,7 +110,7 @@ steps:
       with: 07-complete.md
       issue: 7
 
-  - title: Conclusion
+- title: Conclusion
   description: Store variables in array grouping
   event: issues.closed
   link: "{{ repoUrl }}/issues/8"
