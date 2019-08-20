@@ -6,7 +6,7 @@ tags:
 
 template:
   name: php-intro
-  repo: php-template
+  repo: php-intro-template
   description: An introduction to PHP with HTML
 before:
   - type: createIssue
