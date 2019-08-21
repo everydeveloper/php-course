@@ -19,10 +19,10 @@ steps:
     event: issue_comment
     link: "{{ repoUrl }}/issues/1"
     actions:
-      # - type: gate
-      #   left: '%payload.comment.body%'
-      #   operator: ===
-      #   right: 66
+      - type: gate
+        left: '%payload.comment.body%'
+        operator: ==
+        right: 66
       - type: respond
         with: 01-complete.md
         issue: 1
