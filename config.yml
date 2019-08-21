@@ -16,7 +16,7 @@ before:
 steps:
   - title: Installation
     description: Install server and text editor
-    event: issue_comment.created
+    event: issue_comment
     link: "{{ repoUrl }}/issues/1"
     actions:
       - type: gate
@@ -25,7 +25,7 @@ steps:
         right: 66
         else:
           type: respond
-          with: Sorry, %payload.comment.body% is not right (just enter the result of 800 multiplied by 0.0825)
+          with: Sorry, that is not right
       - type: respond
         with: you got it!
       - type: respond
