@@ -25,13 +25,13 @@ steps:
         right: 66
         else: 
           - type: respond
-            with: Sorry, try again.
+            with: 07-math-fail.md
             issue: 1
+            data:
+              commentBody: '%payload.comment.body%'
       - type: respond
         with: 01-complete.md
         issue: 1
-        data:
-          commentBody: '%payload.comment.body%'
       - type: createIssue
         title: Setting up PHP
         body: 02-php-setup.md
