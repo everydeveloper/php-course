@@ -24,9 +24,9 @@ steps:
         operator: ==
         right: 66
         else: 
-          type: respond
-          with: Sorry, try again.
-          issue: 1
+          - type: respond
+            with: Sorry, try again.
+            issue: 1
       - type: respond
         with: 01-complete.md
         issue: 1
