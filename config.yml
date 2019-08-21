@@ -23,6 +23,9 @@ steps:
         left: '%payload.comment.body%'
         operator: ==
         right: 66
+        else: 
+          type: respond
+          with: Sorry, try again.
       - type: respond
         with: 01-complete.md
         issue: 1
