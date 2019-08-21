@@ -1,13 +1,16 @@
 # Functions
-## What is a Functions
 
-Functions are pre-built commands in PHP that do some of the hard work for you.  You can also write your own custom function.
+Functions are pre-built commands in PHP that do some of the hard work for you.  You can also write your own custom function. The function we will write will calculate tax, but first let's go over using math in PHP
+
 ## Using Math
 
-By using math symbols you can add, subtract, multiply or divide variables:
+By using math symbols you can add, subtract, multiply or divide variables. Add this the bottom of your php tags
 ```php
-  $calculate_tax = $amount*$tax;  //amount = 800, tax = .0825
+	$amount=800;
+	$taxRate=0.0825
+  $addedTax= $amount*$taxRate;  //amount = 800, tax = .0825
 ```
+
 ## Calling an Existing Function
 
 There are many functions available to call, so you should check to see if one exists before trying to create one.  In this case we want to round 811.882 to 811.88 and we will use the round() function which requires a variable and the number of digits to round to.

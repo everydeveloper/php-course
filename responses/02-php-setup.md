@@ -1,34 +1,33 @@
-# Formatting and Structure
-## Setting up PHP
+# Setting up PHP
 
 PHP is server-side code that runs on top of a normal HTML website.  This means you can use HTML and PHP together.
 
  - Get started by creating a PHP document in the www folder in WAMP.  Index.php is considered by most websites to be the "home page"
- - Open index.php in notepad++ and type the following HTML code
+ - Open index.php in your text editor and type the following HTML code
 ```php
 <!DOCTYPE html>
 <html>
   <head>
-    <title>This is a title</title>
+    <title>PHP Store</title>
   </head>
   <body>
     <?php
-    // Using two forward slashes we create comments in php
+    // Using two forward slashes we create comments in php.
+    // Within the php tag, we can insert values into our HTML.
+    echo "<h1>Welcome!</h1>";
     ?>
   </body>
 </html>
 ```
 
-## Displaying Content
-Next, use the "echo" command to display text on the page. We will include html Header 1(`<h1></h1>`) tags in this example.
-<![endif]-->
+# Displaying Content
+In this example, we used the "echo" command to insert an HTML header within the php tags. All of our php code will be contained in these tags. 
 
-```php
-echo "<h1> The Computer is $750 </h1>";
-```
-**Make sure you Always end every statement with a semicolon**
+**Make sure you always end every statement with a semicolon**
 
-When you are finished with this section, push your file to github for the next step:
+In your browser, click on the php-course folder, and you should see the header we inserted being displayed.
+
+If it worked, save your changes to GitHub. 
 ```
 git add index.php
 git commit -m"initial php setup"

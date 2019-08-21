@@ -1,27 +1,65 @@
 # Conditional Statements
 
-## Understanding "if"
+"If" statements are one of the most critical procedures in php decision making. They give you control over what is displayed, making the display more dynamic.
 
-If statements are one of the most critical procedures in php decision making since it helps your program know what and when to output based on pre-set conditions.
-
- - The "if" statement is as simple as "if a condition exists, then do something otherwise (else) do something else".
- - Each statement is made up of 4 sections
-
- 1. The if which starts the statement
- 2. The condition encapsulated by parentheses ( )
- 3. The body encapsulated by brackets { }
- 4. The else which is optional
+An "if" statement tests if a condition is true or false. If true, it will run the code following it. If false, it will skip that code and optionally run code in an "else" statement.
 
 ## Build your "if" statement
 
-Inside of the loop we just created, we want to build an if statement that checks to see if the `$key` is the same value as the `$selected_product` variable.  We do this by using double equal signs (`==`).  This is the condition.
+We can use an "if" statement to display products we can afford. Let's make another foreach loop, but this time test if the value is less than or equal our credit variable.
+
+Add the following to the end of your php tag:
+
 ```php
-    if($key == $selected_product){
-    	echo $key; // nothing should output here except "Computer"
-    }
+echo "<h2>Items you can afford</h2>";
+
+foreach($products as $key => $value){
+  if($value <= $credit ){
+  	echo "<p>".$key."</p>"; 
+  }
 ```
 
-When you are finished with this section, push your file to github for the next step:
+Refresh your page, and make sure these products are listed: "Computer, iPhone, and Toaster".
+
+Your code should look like this:
+
+```php
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PHP Store</title>
+  </head>
+  <body>
+    <?php
+	    $name = "PHP Store";
+			$credit = 1000; 
+
+	    echo "<h1>Welcome to ".$name."!</h1>";
+	    echo "<h2>You have $".$credit." in your wallet.</h2>";
+
+		  $products['Computer']=750;
+	    $products['Car']=15000;
+	    $products['iPhone']=1000;
+	    $products['Toaster']=75;
+
+	    foreach($products as $key => $value){
+		    echo "<p>The ".$key." costs ".$value."</p>";
+	    }
+
+	    echo "<h2>Items you can afford</h2>";
+
+	    foreach($products as $key => $value){
+		    if($value <= $credit ){
+		    	echo "<p>".$key."</p>"; 
+		    }
+	    }
+    ?>
+  </body>
+</html>
+```
+
+When you are finished with this section, push your file to GitHub for the next step:
+
 ```
 git add index.php
 git commit -m"add conditional statement"

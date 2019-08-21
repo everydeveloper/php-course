@@ -1,11 +1,11 @@
-title: PHP Intro
-tagline: Learn the basics of PHP
+title: Introduction to PHP
+tagline: Use PHP to display a store inventory
 description: PHP is a server-side programming language that can insert dynamic code into your HTML. PHP is used in popular content management systems, such as WordPress and Drupal. 
 tags:
   - PHP
 
 template:
-  name: php-intro
+  name: php-course
   repo: php-intro-template
   description: An introduction to PHP with HTML
 before:
@@ -56,67 +56,71 @@ steps:
 
   - title: Building Array Variables
     description: Store variables in array grouping
-    event: push
+    event: issue_comment
     link: "{{ repoUrl }}/issues/4"
     actions:
-      - type: createIssue
-        title: Building Loops
-        body: 05-loops.md
-      - type: closeIssue
-        issue: 4
       - type: respond
-        with: 04-complete.md
+        with: 05-loops.md
         issue: 4
 
   - title: Building Loops
     description: Build a sequence of instructions repeated until a condition is met
     event: push
-    link: "{{ repoUrl }}/issues/5"
+    link: "{{ repoUrl }}/issues/4"
     actions:
       - type: createIssue
         title: Conditional Statements
         body: 06-conditionals.md
       - type: closeIssue
-        issue: 5
+        issue: 4
       - type: respond
         with: 05-complete.md
-        issue: 5
+        issue: 4
 
   - title: Conditional Statements
+    description: Store variables in array grouping
+    event: issue_comment.created
+    link: "{{ repoUrl }}/issues/5"
+    actions:
+      - type: getIssue
+        issue: 5
+        action_id: mathIssue
+      # - type: gate
+      #   left: '%actions.mathIssue.comments[1].body%'
+      #   operator: ===
+      #   right: 66
+      # - type: createIssue
+      #   title: Functions
+      #   body: 07-functions.md
+      # - type: closeIssue
+      #   issue: 5
+      - type: respond
+        with: 06-complete.md
+        issue: 5
+        data: 
+          commentBody: '%actions.mathIssue%'
+
+  - title: Functions
     description: Store variables in array grouping
     event: push
     link: "{{ repoUrl }}/issues/6"
     actions:
       - type: createIssue
-        title: Functions
-        body: 07-functions.md
-      - type: closeIssue
-        issue: 6
-      - type: respond
-        with: 06-complete.md
-        issue: 6
-
-  - title: Functions
-    description: Store variables in array grouping
-    event: push
-    link: "{{ repoUrl }}/issues/7"
-    actions:
-      - type: createIssue
         title: Conclusion
         body: 08-conclusion.md
       - type: closeIssue
-        issue: 7
+        issue: 6
       - type: respond
         with: 07-complete.md
-        issue: 7
+        issue: 6
 
   - title: Conclusion
     description: Store variables in array grouping
     event: issues.closed
-    link: "{{ repoUrl }}/issues/8"
+    link: "{{ repoUrl }}/issues/7"
     actions:
       - type: respond
         with: 08-complete.md
-        issue: 8
+        issue: 7
 
 

@@ -1,18 +1,46 @@
 ## Building variables with an Array
 Arrays are groupings of information that can be tied to a variable.  Arrays have keys and keys have values.  For example: 
 ```php
-  $ArrayVariable["keyName"] = "something";
+  $ArrayVariable['keyName'] = 'something';
 ```
 Build an array for a series of products and their prices under the variables we just created above.
 ```php
-    $products['Computer']=750;
-    $products['Car']=15000;
-    $products['iPhone']=1000;
-    $products['Toaster']=75;
+  $products['Computer']=750;
+  $products['Car']=15000;
+  $products['iPhone']=1000;
+  $products['Toaster']=75;
 ```
-When you are finished with this section, push your file to github for the next step:
+You can access the value stored in an array like this:
+```php
+echo "<p>A car costs ".$products['Car']."</p>";
 ```
-git add index.php
-git commit -m"add array"
-git push origin master
+Your code should look like this now:
+
+```php
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PHP Store</title>
+  </head>
+  <body>
+    <?php
+      $name = "PHP Store";
+      $customer_number = 1000; 
+
+      echo "<h1>Welcome to ".$name."!</h1>";
+      echo "<h2>You are customer number:".$customer_number.".</h2>";
+
+		  $products['Computer']=750;
+	    $products['Car']=15000;
+	    $products['iPhone']=1000;
+	    $products['Toaster']=75;
+
+	    echo "<p>A car costs $".$products['Car']."</p>";
+    ?>
+  </body>
+</html>
 ```
+
+Save your file and refresh your browser. You should now also see the sentence: _A car costs $15000_.
+
+If this worked, leave a comment on this issue for the next step.
