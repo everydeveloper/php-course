@@ -16,9 +16,18 @@ before:
 steps:
   - title: Installation
     description: Install server and text editor
-    event: issues.closed
+    event: issue_comment.created
     link: "{{ repoUrl }}/issues/1"
     actions:
+      - type: gate
+        left: '%payload.comment.body%'
+        operator: ===
+        right: 66
+        else:
+          type: respond
+          with: Sorry, %payload.comment.body% is not right (just enter the result of 800 multiplied by 0.0825)
+      - type: respond
+        with: you got it!
       - type: respond
         with: 01-complete.md
         issue: 1
@@ -78,41 +87,48 @@ steps:
         issue: 4
 
   - title: Conditional Statements
-    description: Store variables in array grouping
-    event: issue_comment.created
+    description: Conditionally run different blocks of code
+    event: push
     link: "{{ repoUrl }}/issues/5"
     actions:
-      - type: getIssue
+      - type: createIssue
+        title: Conditional Statements
+        body: 07-conditionals.md
+      - type: closeIssue
         issue: 5
-        action_id: mathIssue
-      # - type: gate
-      #   left: '%actions.mathIssue.comments[1].body%'
-      #   operator: ===
-      #   right: 66
+      - type: respond
+        with: 05-complete.md
+        issue: 5
+
+  - title: Functions
+    description: Create functions
+    event: issue_comment.created
+    link: "{{ repoUrl }}/issues/6"
+    actions:
+      - type: gate
+        left: '%payload.comment.body%'
+        operator: ===
+        right: 66
+        else:
+          type: respond
+          with: Sorry, that is not right (just enter the result of 800 multiplied by 0.0825)
+      - type: respond
+        with: you got it!   
       # - type: createIssue
       #   title: Functions
       #   body: 07-functions.md
       # - type: closeIssue
       #   issue: 5
-      - type: respond
-        with: 06-complete.md
-        issue: 5
-        data: 
-          commentBody: '%actions.mathIssue%'
-
-  - title: Functions
-    description: Store variables in array grouping
-    event: push
-    link: "{{ repoUrl }}/issues/6"
-    actions:
-      - type: createIssue
-        title: Conclusion
-        body: 08-conclusion.md
-      - type: closeIssue
-        issue: 6
+      # - type: createIssue
+      #   title: Conclusion
+      #   body: 08-conclusion.md
+      # - type: closeIssue
+      #   issue: 6
       - type: respond
         with: 07-complete.md
         issue: 6
+        data: 
+          commentBody: '%actions.mathIssue.data.html_url%'
 
   - title: Conclusion
     description: Store variables in array grouping

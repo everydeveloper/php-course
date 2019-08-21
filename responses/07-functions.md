@@ -2,6 +2,8 @@
 
 Functions are pre-built commands in PHP that do some of the hard work for you.  You can also write your own custom function. The function we will write will calculate tax, but first let's go over using math in PHP
 
+
+
 ## Using Math
 
 By using math symbols you can add, subtract, multiply or divide variables. Add this the bottom of your php tags
