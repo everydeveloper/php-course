@@ -23,9 +23,6 @@ steps:
         left: '%payload.comment.body%'
         operator: ===
         right: 66
-        else:
-          type: respond
-          with: Sorry, that is not right
       - type: respond
         with: you got it!
       - type: respond
