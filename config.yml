@@ -106,7 +106,7 @@ steps:
             issue: 1
             data:
               commentBody: '%payload.comment.body%'
-        type: respond
+      - type: respond
         with: 07-math-success.md
         issue: 6
 
