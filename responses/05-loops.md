@@ -32,10 +32,10 @@ You code should look like this now:
   <body>
     <?php
 	    $name = "PHP Store";
-			$customer_number = 1000; 
+			$credit = 1000; 
 
 	    echo "<h1>Welcome to ".$name."!</h1>";
-	    echo "<h2>You are customer number:".$customer_number.".</h2>";
+	    echo "<h2>You have $".$credit." in your wallet.</h2>";
 
 		  $products['Computer']=750;
 	    $products['Car']=15000;

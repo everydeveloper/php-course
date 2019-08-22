@@ -83,12 +83,12 @@ steps:
     link: "{{ repoUrl }}/issues/5"
     actions:
       - type: createIssue
-        title: Conditional Statements
-        body: 07-conditionals.md
+        title: Writing a Math Function
+        body: 07-functions.md
       - type: closeIssue
         issue: 5
       - type: respond
-        with: 05-complete.md
+        with: 06-complete.md
         issue: 5
 
   - title: Using Math

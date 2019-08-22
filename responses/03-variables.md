@@ -7,14 +7,14 @@ Variables are an essential part of any project. They hold data that can be modif
 - For Example:
 ```php
 $name = "PHP Store";
-$customer_number = 1000;
+$credit = 1000;
 ``` 
 
 ## Combining text and Variables
 Using a period (.), we can concatenate text and variables.  Replace the text in the php tag with the following:
 ```php
 echo "<h1>Welcome to ".$name."!</h1>";
-echo "<h2>You are customer number:".$customer_number.".</h2>";
+echo "<h2>You have $".$credit." in your wallet.</h2>";";
 ```
 
 Your code should look like this now:
@@ -27,16 +27,17 @@ Your code should look like this now:
   </head>
   <body>
     <?php
-	    $name = "PHP Store";
-			$customer_number = 1000; 
-	    echo "<h1>Welcome to ".$name."!</h1>";
-	    echo "<h2>You are customer number:".$customer_number.".</h2>";
+      $name = "PHP Store";
+      $credit = 1000; 
+
+      echo "<h1>Welcome to ".$name."!</h1>";
+      echo "<h2>You have $".$credit." in your wallet.</h2>";
     ?>
   </body>
 </html>
 ```
 
-Refresh your browser and you should these sentences: _Welcome to PHP Store! You are customer number:1000._
+Refresh your browser and you should these sentences: _Welcome to PHP Store! You have $1000 in your wallet._
 
 If that worked, push your file to GitHub for the next step:
 ```
