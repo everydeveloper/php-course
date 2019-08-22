@@ -45,7 +45,7 @@ At this point we just need to add all the pieces together and we will have a fun
   </body>
 </html>
 ```
-
-Looks like we can't afford the iPhone after all... (Maybe this is too example is too realistic 🤔)
+... 🤔 
+Looks like we can't afford the iPhone after all (after taxes)! 
 
 **Close this issue when you are finished**
