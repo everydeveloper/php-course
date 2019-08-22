@@ -16,19 +16,9 @@ before:
 steps:
   - title: Installation
     description: Install server and text editor
-    event: issue_comment
+    event: issues.closed
     link: "{{ repoUrl }}/issues/1"
     actions:
-      - type: gate
-        left: '%payload.comment.body%'
-        operator: ==
-        right: 66
-        else: 
-          - type: respond
-            with: 07-math-fail.md
-            issue: 1
-            data:
-              commentBody: '%payload.comment.body%'
       - type: respond
         with: 01-complete.md
         issue: 1
@@ -101,35 +91,38 @@ steps:
         with: 05-complete.md
         issue: 5
 
-  - title: Functions
-    description: Create functions
-    event: issue_comment.created
+  - title: Using Math
+    description: Use math operators to calculate values
+    event: issue_comment
     link: "{{ repoUrl }}/issues/6"
     actions:
       - type: gate
         left: '%payload.comment.body%'
-        operator: ===
+        operator: ==
         right: 66
-        else:
-          type: respond
-          with: Sorry, that is not right (just enter the result of 800 multiplied by 0.0825)
-      - type: respond
-        with: you got it!   
-      # - type: createIssue
-      #   title: Functions
-      #   body: 07-functions.md
-      # - type: closeIssue
-      #   issue: 5
-      # - type: createIssue
-      #   title: Conclusion
-      #   body: 08-conclusion.md
-      # - type: closeIssue
-      #   issue: 6
+        else: 
+          - type: respond
+            with: 07-math-fail.md
+            issue: 1
+            data:
+              commentBody: '%payload.comment.body%'
+        type: respond
+        with: 07-math-success.md
+        issue: 6
+
+  - title: Functions
+    description: Functions allow you to re-use blocks of code by calling them
+    event: push
+    link: "{{ repoUrl }}/issues/6"
+    actions: 
+      - type: createIssue
+        title: Conclusion
+        body: 08-conclusion.md
+      - type: closeIssue
+        issue: 6
       - type: respond
         with: 07-complete.md
         issue: 6
-        data: 
-          commentBody: '%actions.mathIssue.data.html_url%'
 
   - title: Conclusion
     description: Store variables in array grouping

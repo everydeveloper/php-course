@@ -1,39 +1,51 @@
 # Conclusion
 
-At this point we just need to add all the pieces together and we will have a functioning program that searches a php array for the key of “Computer” and uses that value to calculate tax and display it on the screen.
+At this point we just need to add all the pieces together and we will have a functioning program that displays products with added tax. Your code should look like this now:
 ```php
 <!DOCTYPE html>
 <html>
   <head>
-    <title>This is a title</title>
+    <title>PHP Store</title>
   </head>
   <body>
-<?php
-$tax_value = .0825;
-$selected_product = "Computer";
+    <?php
+	    $name = "PHP Store";
+			$credit = 1000; 
 
-//Build an array of products
-$products['Computer']=750;
-$products['Car']=15000;
-$products['iPhone']=1000;
-$products['Toaster']=75;
+	    echo "<h1>Welcome to ".$name."!</h1>";
+	    echo "<h2>You have $".$credit." in your wallet.</h2>";
 
-foreach($products as $key => $value){
-	if($key==$selected_product){
-		$value = tax_calc($value,$tax_value) ;
-		echo "<h1> The ".$selected_product." is ".$value." after tax. </h1>";
-	}
-}
+		  $products['Computer']=750;
+	    $products['Car']=15000;
+	    $products['iPhone']=1000;
+	    $products['Toaster']=75;
 
-function tax_calc($amount,$tax){
-	$calculate_tax = $amount*$tax;
-	$amount = round($amount+$calculate_tax,2);
-	$addDollar_in_front = "$".$amount;
-	return $addDollar_in_front;
-}
-?>
+      $taxRate=0.0825;
+
+      function tax_calc($amount,$tax){
+	    	$addedTax = $amount*$tax;
+	    	$amountWithTax = round($amount+$addedTax,2);
+	    	return $amountWithTax;
+    	}
+
+	    foreach($products as $key => $value){
+	    	$costWithTax = tax_calc($value,$taxRate);
+		    echo "<p>The ".$key." costs ".$costWithTax." with tax</p>";
+	    }
+
+	    echo "<h2>Items you can afford</h2>";
+
+	    foreach($products as $key => $value){
+	    	$costWithTax = tax_calc($value,$taxRate);
+		    if($costWithTax <= $credit ){
+		    	echo "<p>".$key."</p>"; 
+		    }
+	    }
+    ?>
   </body>
 </html>
 ```
 
-Check to make sure your code looks like the above. **Close this issue when you are finished**
+Looks like we can't afford the iPhone after all... (Maybe this is too example is too realistic 🤔)
+
+**Close this issue when you are finished**
