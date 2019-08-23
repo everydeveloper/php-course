@@ -9,7 +9,7 @@ round(811.882,2); // should return 811.88
 ```
 ## Create a Function
 
-At the very bottom of the page, type the following code to create a tax calculating function:
+At the very bottom of the PHP code (but before the `?>`), type the following code to create a tax calculating function:
 ```php
   function tax_calc($amount,$tax){
   	$calculate_tax = $amount*$tax;
@@ -19,7 +19,7 @@ At the very bottom of the page, type the following code to create a tax calculat
 ```
 When when want to use this function, pass in values for $amount and $tax like so:
 ```php
-echo tax_calc(750,0.223) // When you refresh your page you should the value 917.25 at the bottom of the screen.
+echo tax_calc(750,0.223); // When you refresh your page you should the value 917.25 at the bottom of the screen.
 ```
 When you have successfully defined and called your function, push your changes to GitHub.
 ```
