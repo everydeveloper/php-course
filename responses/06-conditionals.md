@@ -17,6 +17,7 @@ foreach($products as $key => $value){
   if($value <= $credit ){
   	echo "<p>".$key."</p>"; 
   }
+}
 ```
 
 Refresh your page, and make sure these products are listed: "Computer, iPhone, and Toaster".
