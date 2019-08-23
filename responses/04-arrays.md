@@ -3,7 +3,7 @@ Arrays are groupings of information that can be tied to a variable.  Arrays have
 ```php
   $ArrayVariable['keyName'] = 'something';
 ```
-Build an array for a series of products and their prices under the variables we just created above.
+Build an array for a series of products and their prices under the variables we created in the previous step.
 ```php
   $products['Computer']=750;
   $products['Car']=15000;
@@ -30,7 +30,7 @@ Your code should look like this now:
       echo "<h1>Welcome to ".$name."!</h1>";
       echo "<h2>You have $".$credit." in your wallet.</h2>";
 
-		  $products['Computer']=750;
+	    $products['Computer']=750;
 	    $products['Car']=15000;
 	    $products['iPhone']=1000;
 	    $products['Toaster']=75;
@@ -41,6 +41,6 @@ Your code should look like this now:
 </html>
 ```
 
-Save your file and refresh your browser. You should now also see the sentence: _A car costs $15000_.
+Save your file and refresh your browser. You should see a new sentence on your web page.
 
-If this worked, leave a comment on this issue for the next step.
+Copy and paste the new sentence as a comment on this issue for the next step.
