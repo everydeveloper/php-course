@@ -14,10 +14,10 @@ There are three primary types of loops that we use in PHP.  For this example we 
 ## Looping through our array
 Let's use a foreach loop to display every key and value in our $products array as 'p' tags. This is much more efficient than listing each manually (imagine if there were thousands of products!)
 
-Add this loop after your array values:
+Replace the last echo line with this loop after your array values:
 ```php
     foreach($products as $key => $value){
-	    echo "<p>The ".$key." costs ".$value"</p>";
+	    echo "<p>The ".$key." costs ".$value."</p>";
     }
 ```
 
@@ -52,7 +52,7 @@ You code should look like this now:
 
 ```
 
-If it worked, you should see a list of products and their values. When you are finished with this section, push your file to github:
+If it worked, you should see a list of products and their values. When you are finished with this section, push your file to GitHub:
 ```
 git add index.php
 git commit -m"add foreach loop"
