@@ -3,15 +3,16 @@
 ## Building Variables
 Variables are an essential part of any project. They hold data that can be modified or used later in a program.
 
-- We define variables in PHP with a $ sign and then we need to decide what the datatype for the variable will be.  For a string of text make sure to put the text in quotes.  If the value is a decimal or integer, no quotes are needed.
-- For Example:
+We define variables in PHP with a $ sign and then we need to decide what the datatype for the variable will be.  For a string of text make sure to put the text in quotes.  If the value is a decimal or integer, no quotes are needed.
+
+For Example, let's add these after the `<?php` in our code:
 ```php
 $name = "PHP Store";
 $credit = 1000;
 ``` 
 
 ## Combining text and Variables
-Using a period (.), we can concatenate text and variables.  Replace the text in the php tag with the following:
+Using a period (.), we can concatenate text and variables.  Replace the echo line with the following:
 ```php
 echo "<h1>Welcome to ".$name."!</h1>";
 echo "<h2>You have $".$credit." in your wallet.</h2>";";
