@@ -9,7 +9,7 @@ By using math symbols you can add(+), subtract(-), multiply(*) or divide(/) vari
 $amount=800;
 $taxRate=0.0825;
 $addedTax= $amount*$taxRate;  //amount = 800, tax = .0825
-echo $addedTax
+echo $addedTax;
 ```
 Refresh the page, and leave a comment with the value of $addedTax to continue. 
 
